@@ -3187,7 +3187,7 @@ var BUILD={
     show();
   },
   multiselect:function(s,h){
-    head(s,h);sit(s,h);task(s,h);
+    head(s,h);media(s).forEach(function(f){h.appendChild(imgOrPh(f,U('scene')+': '+strip(s.heading)));});sit(s,h);task(s,h);   /* its picture, as mcq (2026-11-25: a multiselect's media was never shown) */
     var grid=el('<div class="tiles"></div>'),sel={},tries=0;
     s.items.forEach(function(it,i){
       var b=el('<button class="tile" type="button" aria-pressed="false"><span class="ck"></span>'+icon(it.icon)+'<span class="nm">'+T(it.text)+'</span></button>');
